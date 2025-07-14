@@ -30,6 +30,8 @@
 - React-router-dom
 - JavaScript
 - firebase
+- HTML
+- CSS (CSS 프레임워크를 사용하지 않고 모듈화만)
 
 
 # 개발정보
