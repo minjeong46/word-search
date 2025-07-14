@@ -32,3 +32,13 @@
 - firebase
 
 
+# 개발정보
+## 7/14(일)
+- React 세팅
+- Header, Maker 페이지 구현
+- Maker 페이지에서 데이터 입력 후 FireBase RealtimeDB 로 DB 에 저장되도록 구현
+
+## 7/15(월)
+- Maker 페이지 디자인
+- React-router-dom 라이브러리를 사용하여 라우팅을 구현 (Maker 페이지와 Main 페이지만 path)
+
