@@ -2,14 +2,16 @@ import { useState } from "react";
 import "../styles/maker.css";
 import { ref, push } from "firebase/database";
 import { database } from "../../firebase";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Maker = () => {
+    const navigate = useNavigate();
+
     const [words, setWords] = useState(Array(30).fill(""));
     const [formData, setFormData] = useState({
         title: "",
         description: "",
-        words: words,
+        // words: words,
     });
 
     const handleListInputChange = (idx, value) => {
@@ -25,11 +27,10 @@ const Maker = () => {
 
         if (filterWords.length >= 10) {
             wordGameMaker(formData.title, formData.description, words);
+            navigate("/");
         }else {
-            alert("단어를 10개 이상 입력");
+            alert("단어를 10개 이상 입력해주세요");
         }
-
-
     };
 
     const onChange = (e) => {
@@ -41,10 +42,11 @@ const Maker = () => {
     };
 
     function wordGameMaker(title, description, words) {
-        push(ref(database, "maker"), {
+        push(ref(database, "items"), {
            title,
            description,
            words,
+           createdAt: new Date().getTime() // key
         });
         alert("완료"); // 임시
     }
