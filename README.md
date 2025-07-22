@@ -44,3 +44,11 @@
 - Maker 페이지 디자인
 - React-router-dom 라이브러리를 사용하여 라우팅을 구현 (Maker 페이지와 Main 페이지만 path)
 
+## 7/22(화)
+- Play 페이지
+  DB에서 createdAt 을 이용해 path 를 이용해 링크 생성하였지만, createdAt이 아닌 DB 시 생성되는 key 을 이용해 id 필드 생성으로 변경 -> 해당 게임을 가져올 때 key 값이 필요
+  /items/id(or key) 값으로 라우팅해주고 useParams() 로 값을 가져오고 DB 에서 해당 id 값을 이용해 읽어와 data 를 item State 에 넣어둔다.
+
+  영어 단어가 입력될 박스 구현
+  
+  
