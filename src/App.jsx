@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import { Route, Routes } from "react-router-dom";
 import Maker from "./pages/Maker";
 import Play from "./pages/Play";
+import Modal from "./components/Modal";
 
 function App() {
     return (
@@ -14,8 +15,9 @@ function App() {
                 <Route path="/" element={<Main />} />
                 <Route path="/maker" element={<Maker />} />
                 <Route path="/item/:id" element={<Play />} />
+                <Route path="/modal" element={<Modal />} />
             </Routes>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </>
     );
 }

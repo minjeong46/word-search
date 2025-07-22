@@ -33,7 +33,7 @@ const Main = () => {
             <h1>Puzzle Game List</h1>
             <ul>
                 {items.map((item, idx) => {
-                    return <li key={`item ${idx}`} onClick={() =>  handleItemMove(item.createdAt)}>🧩 {item.title}</li>;
+                    return <li key={`item ${idx}`} onClick={() =>  handleItemMove(item.id)}>🧩 {item.title}</li>;
                 })}
             </ul>
         </main>

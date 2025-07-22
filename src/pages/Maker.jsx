@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../styles/maker.css";
-import { ref, push } from "firebase/database";
+import { ref, push, getDatabase, set } from "firebase/database";
 import { database } from "../../firebase";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -42,12 +42,20 @@ const Maker = () => {
     };
 
     function wordGameMaker(title, description, words) {
-        push(ref(database, "items"), {
+
+        const db = getDatabase();
+        const itemRef = ref(db, "items/");
+        const newRef =  push(itemRef);
+
+        const newItem = {
+           id: newRef.key,
            title,
            description,
            words,
            createdAt: new Date().getTime() // key
-        });
+        };
+
+        set(newRef, newItem);
         alert("완료"); // 임시
     }
 

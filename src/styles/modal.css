@@ -1,0 +1,15 @@
+#modal-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.modal-box {
+    position: absolute;
+    left: calc(50% - 16rem);
+    top: calc(50% - 4rem);
+    border-radius: 1rem;
+    padding: 4rem 16rem;
+    background-color: #eba292;
+    
+}

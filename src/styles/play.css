@@ -1,0 +1,16 @@
+.play-word-container {
+    display: flex;
+    justify-content: space-between;
+}
+#play-word-content {
+    display: grid;
+    grid-template-columns: repeat(12, 44px);
+    grid-template-rows: repeat(14, 44px);
+    outline: 1px solid #DDDDDB;
+}
+.play-word-content__box {
+    width: 44px;
+    height: 44px;
+    border: 1px solid #DDDDDB;
+    
+}
