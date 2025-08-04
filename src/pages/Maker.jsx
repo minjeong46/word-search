@@ -51,7 +51,7 @@ const Maker = () => {
            id: newRef.key,
            title,
            description,
-           words,
+           words: words.filter(Boolean),
            createdAt: new Date().getTime() // key
         };
 
