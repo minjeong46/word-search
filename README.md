@@ -50,5 +50,41 @@
   /items/id(or key) 값으로 라우팅해주고 useParams() 로 값을 가져오고 DB 에서 해당 id 값을 이용해 읽어와 data 를 item State 에 넣어둔다.
 
   영어 단어가 입력될 박스 구현
+## 8/4(월)
+- Play 페이지 word 값 배치
+  random 으로 12*14 2차원 배열에 word 를 넣어주고 랜덤한 소문자를 넣어준다.
+  넣을 위치를 for 문을 이용해 돌려주고 열값만 바뀌면서 word 단어를 하나씩 넣도록 구현해준다.
+  
+  ```
+    words?.forEach((word) => {
+            const row = Math.floor(Math.random() * rows);
+            const maxCol = cols - word.length;
+            const col = Math.floor(Math.random() * (maxCol + 1)); // 실수로 나와서 +1 ex, 6이면 0~5.99 이므로 소수점 버리면 0~5 이므로 +1
+
+            for (let i = 0; i < word.length; i++) {
+                grid[row][col + i] = word[i]; // 단어 나열을 위해 +i 로 해서 증가시키면서 단어 넣도록
+            }
+        });
+  ```
+
+- Play페이지 랜덤 소문자 빈 인덱스에 배치
+  중첩 for 문으로 순환하여 랜덤 소문자를 넣어준다.
+
+  ```
+    const letter = "abcdefghijklmnopqrstuvwxyz";
+
+        for (let i = 0; i < rows; i++) {
+            for (let j = 0; j < cols; j++) {
+                console.log(grid[i][j]);
+                if (grid[i][j] === "") {
+                    let rel = letter.charAt(
+                        Math.floor(Math.random() * letter.length)
+                    );
+
+                    grid[i][j] = rel;
+                }
+            }
+        }
+  ```
   
   
